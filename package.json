@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run generate-config && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-config": "node scripts/generate-config.js"
   },
   "dependencies": {
     "next": "15.0.3",
