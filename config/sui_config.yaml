@@ -1,6 +1,6 @@
 ---
 keystore:
-  File: ${keystore_path}
+  File: /var/task/config/sui.keystore
 envs:
   - alias: testnet
     rpc: 'https://fullnode.testnet.sui.io:443'

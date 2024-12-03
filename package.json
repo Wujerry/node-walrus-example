@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run generate-config && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "generate-config": "node ./script/generate-config.js"
