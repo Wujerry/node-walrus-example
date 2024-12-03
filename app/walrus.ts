@@ -1,4 +1,4 @@
-import { WalrusClient } from 'node-walrus'
+import { WalrusClient } from 'node-walrus-vercel'
 import path from 'path'
 import fs from 'fs'
 
@@ -26,4 +26,8 @@ export function getListBlob() {
 
 export function getVersion() {
   return client.getVersion()
+}
+
+export function getNpxVersion() {
+  return client.runNpxVersion()
 }

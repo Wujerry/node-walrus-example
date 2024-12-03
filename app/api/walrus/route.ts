@@ -19,4 +19,9 @@ export async function GET(request: NextRequest) {
     const res = await getVersion()
     return Response.json(res)
   }
+
+  if (cmd === 'npxversion') {
+    const res = await getVersion()
+    return Response.json(res)
+  }
 }
