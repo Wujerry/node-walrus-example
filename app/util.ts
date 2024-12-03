@@ -77,8 +77,10 @@ export async function initConfigFile() {
     return
   }
   // copy config file to /tmp
-  fs.copyFileSync(clientConfig, '/tmp/client_config.yaml')
-  fs.copyFileSync(walletConfig, '/tmp/sui_config.yaml')
+  fs.copyFileSync(clientConfig, clientConfigTmpPath)
+  console.log(clientConfig, clientConfigTmpPath, 'config file copied')
+  console.log(fs.existsSync(clientConfigTmpPath))
+  fs.copyFileSync(walletConfig, walletConfigTmpPath)
   fs.copyFileSync(keyStore, '/tmp/sui.keystore')
 
   console.log('config file copied')
