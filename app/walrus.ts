@@ -6,7 +6,9 @@ const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
 
 const client = new WalrusClient(clientConfig, walletConfig)
 console.log('client inited')
-console.log(client.runNpxVersion(), 'client.runNpxVersion()')
+client.runNpxVersion().then((res) => {
+  console.log('npx version', res)
+})
 
 export function getInfo() {
   return client.getInfo()
@@ -21,5 +23,6 @@ export function getVersion() {
 }
 
 export function getNpxVersion() {
+  console.log('getNpxVersion')
   return client.runNpxVersion()
 }
