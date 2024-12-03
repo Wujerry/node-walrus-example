@@ -7,6 +7,7 @@ const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
 
 const client = new WalrusClient(clientConfig, walletConfig)
 console.log('client inited')
+logPath()
 client.runNpxVersion().then((res) => {
   console.log('npx version', res)
 })
@@ -25,6 +26,11 @@ export function getVersion() {
 
 export function getNpxVersion() {
   console.log('getNpxVersion')
+
+  return client.runNpxVersion()
+}
+
+export function logPath() {
   console.log(
     fs.existsSync(process.cwd() + '/node_modules/node-walrus-vercel'),
     'node-walrus-vercel'
@@ -39,5 +45,5 @@ export function getNpxVersion() {
     ),
     'bin'
   )
-  return client.runNpxVersion()
+  console.log(fs.existsSync('/tmp/node-walrus/bin/walrusjs'), '/tmp')
 }
