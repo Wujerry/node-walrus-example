@@ -72,7 +72,7 @@ export async function initConfigFile() {
   const keyStore = path.resolve(process.cwd(), 'config', 'sui.keystore')
 
   // check if config file exists in under /tmp
-  if (fs.existsSync(clientConfig)) {
+  if (fs.existsSync(clientConfigTmpPath)) {
     console.log('config file already exists')
     return
   }
