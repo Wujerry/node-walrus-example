@@ -1,6 +1,9 @@
 import { WalrusClient } from 'node-walrus'
 import path from 'path'
 import fs from 'fs'
+import { downloadBin } from './util'
+
+downloadBin()
 
 const clientConfig = path.resolve(process.cwd(), 'config', 'client_config.yaml')
 const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
