@@ -78,8 +78,6 @@ export async function initConfigFile() {
   }
   // copy config file to /tmp
   fs.copyFileSync(clientConfig, clientConfigTmpPath)
-  console.log(clientConfig, clientConfigTmpPath, 'config file copied')
-  console.log(fs.existsSync(clientConfigTmpPath))
   fs.copyFileSync(walletConfig, walletConfigTmpPath)
   fs.copyFileSync(keyStore, '/tmp/sui.keystore')
 
