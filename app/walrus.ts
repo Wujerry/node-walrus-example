@@ -25,6 +25,11 @@ export function getVersion() {
 
 export function getNpxVersion() {
   console.log('getNpxVersion')
-  console.log(fs.existsSync(process.cwd() + '/node_modules'), 'node_modules')
+  console.log(
+    fs.existsSync(
+      process.cwd() + '/node_modules/node-walrus-vercel/bin/walrusjs'
+    ),
+    'node_modules'
+  )
   return client.runNpxVersion()
 }
