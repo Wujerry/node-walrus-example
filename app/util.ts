@@ -61,3 +61,28 @@ function downloadBinary(url: string, dest: string) {
       })
   })
 }
+
+export async function initConfigFile() {
+  const clientConfig = path.resolve(
+    process.cwd(),
+    'config',
+    'client_config.yaml'
+  )
+  const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
+  const keyStore = path.resolve(process.cwd(), 'config', 'sui.keystore')
+
+  // check if config file exists in under /tmp
+  if (fs.existsSync(clientConfig)) {
+    console.log('config file already exists')
+    return
+  }
+  // copy config file to /tmp
+  fs.copyFileSync(clientConfig, '/tmp/client_config.yaml')
+  fs.copyFileSync(walletConfig, '/tmp/sui_config.yaml')
+  fs.copyFileSync(keyStore, '/tmp/sui.keystore')
+
+  console.log('config file copied')
+}
+
+export const clientConfigTmpPath = '/tmp/client_config.yaml'
+export const walletConfigTmpPath = '/tmp/sui_config.yaml'
