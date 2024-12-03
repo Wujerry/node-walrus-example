@@ -1,4 +1,4 @@
-import { WalrusClient } from 'node-walrus-vercel'
+import { WalrusClient } from 'node-walrus'
 import path from 'path'
 import fs from 'fs'
 
@@ -8,11 +8,9 @@ const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
 const client = new WalrusClient(clientConfig, walletConfig)
 console.log('client inited')
 logPath()
-client.runNpxVersion().then((res) => {
-  console.log('npx version', res)
-})
 
 export function getInfo() {
+  logPath()
   return client.getInfo()
 }
 
@@ -22,12 +20,6 @@ export function getListBlob() {
 
 export function getVersion() {
   return client.getVersion()
-}
-
-export function getNpxVersion() {
-  console.log('getNpxVersion')
-
-  return client.runNpxVersion()
 }
 
 export function logPath() {

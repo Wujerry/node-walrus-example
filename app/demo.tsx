@@ -23,13 +23,6 @@ export default function Demo() {
     setOutput({ __html: prettyPrintJson.toHtml(res) })
   }
 
-  const handleNpxVersion = async () => {
-    const res = await fetch('/api/walrus?cmd=npxversion').then((res) =>
-      res.json()
-    )
-    setOutput({ __html: prettyPrintJson.toHtml(res) })
-  }
-
   return (
     <div>
       <h1>walrus demo</h1>
@@ -40,10 +33,6 @@ export default function Demo() {
         </button>
         <button style={{ marginLeft: 20 }} onClick={handleVersion}>
           version
-        </button>
-
-        <button style={{ marginLeft: 20 }} onClick={handleNpxVersion}>
-          npx version
         </button>
       </div>
       <pre className="json-container" dangerouslySetInnerHTML={output}></pre>

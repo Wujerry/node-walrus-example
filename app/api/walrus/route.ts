@@ -1,4 +1,4 @@
-import { getInfo, getListBlob, getNpxVersion, getVersion } from '@/app/walrus'
+import { getInfo, getListBlob, getVersion } from '@/app/walrus'
 import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
@@ -15,11 +15,6 @@ export async function GET(request: NextRequest) {
 
   if (cmd === 'version') {
     const res = await getVersion()
-    return Response.json(res)
-  }
-
-  if (cmd === 'npxversion') {
-    const res = await getNpxVersion()
     return Response.json(res)
   }
 }
