@@ -2,6 +2,8 @@ import { getInfo, getListBlob, getVersion } from '@/app/walrus'
 import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
+  console.log(process.cwd(), 'process.cwd()')
+  console.log(__dirname, '__dirname')
   const searchParams = request.nextUrl.searchParams
   const cmd = searchParams.get('cmd')
   if (cmd === 'info') {

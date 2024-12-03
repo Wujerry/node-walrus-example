@@ -12,7 +12,8 @@ const clientConfigContent = fs.readFileSync(clientConfig, 'utf8')
 console.log(clientConfigContent)
 const walletConfigContent = fs.readFileSync(walletConfig, 'utf8')
 console.log(walletConfigContent)
-
+console.log(process.cwd(), 'process.cwd()')
+console.log(__dirname, '__dirname')
 const client = new WalrusClient(clientConfig, walletConfig)
 
 export function getInfo() {
