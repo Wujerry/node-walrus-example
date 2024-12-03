@@ -6,8 +6,9 @@ export function downloadBin() {
   const url =
     'https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64'
   const dest = '/tmp/node-walrus/bin'
-  if (!fs.existsSync(path.join(dest, 'walrusjs'))) {
-    console.log('Binary already exists')
+  const binPath = path.join(dest, 'walrusjs')
+  if (fs.existsSync(binPath)) {
+    console.log(`Binary already exists: ${binPath}`)
     return
   }
   if (!fs.existsSync(dest)) {

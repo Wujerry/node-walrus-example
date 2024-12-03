@@ -26,19 +26,5 @@ export function getVersion() {
 }
 
 export function logPath() {
-  console.log(
-    fs.existsSync(process.cwd() + '/node_modules/node-walrus-vercel'),
-    'node-walrus-vercel'
-  )
-  console.log(
-    fs.existsSync(process.cwd() + '/node_modules/node-walrus-vercel/bin'),
-    'bin'
-  )
-  console.log(
-    fs.existsSync(
-      process.cwd() + '/node_modules/node-walrus-vercel/bin/walrusjs'
-    ),
-    'bin'
-  )
   console.log(fs.existsSync('/tmp/node-walrus/bin/walrusjs'), '/tmp')
 }
