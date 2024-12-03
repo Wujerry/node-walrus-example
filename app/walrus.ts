@@ -1,5 +1,6 @@
 import { WalrusClient } from 'node-walrus-vercel'
 import path from 'path'
+import fs from 'fs'
 
 const clientConfig = path.resolve(process.cwd(), 'config', 'client_config.yaml')
 const walletConfig = path.resolve(process.cwd(), 'config', 'sui_config.yaml')
@@ -24,5 +25,6 @@ export function getVersion() {
 
 export function getNpxVersion() {
   console.log('getNpxVersion')
+  console.log(fs.existsSync(process.cwd() + '/node_modules'), 'node_modules')
   return client.runNpxVersion()
 }
