@@ -19,6 +19,7 @@ export function downloadBin() {
 
   const filePath = path.join(dest, fileName)
 
+  console.log('Downloading binary...')
   return downloadBinary(url, filePath)
     .then(() => {
       setExecutablePermission(filePath)
