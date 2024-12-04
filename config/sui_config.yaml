@@ -1,6 +1,6 @@
 ---
 keystore:
-  File: /home/jerry/workspace/web3/sui/node-walrus-example/config/sui.keystore
+  File: /tmp/sui.keystore
 envs:
   - alias: testnet
     rpc: 'https://fullnode.testnet.sui.io:443'
