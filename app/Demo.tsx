@@ -24,6 +24,11 @@ export default function Demo() {
   return (
     <div style={{ padding: 16, width: 1280, margin: '0 auto' }}>
       <h1>Walrus demo on Vercel</h1>
+      <h4>
+        <a href="https://www.npmjs.com/package/node-walrus">
+          https://www.npmjs.com/package/node-walrus
+        </a>
+      </h4>
       <div style={{ display: 'flex' }}>
         <div style={{ width: 450, overflow: 'auto' }}>
           <div style={{ padding: 8 }}>
