@@ -10,6 +10,7 @@
     "generate-config": "node ./script/generate-config.js"
   },
   "dependencies": {
+    "highlight.js": "^11.10.0",
     "next": "15.0.3",
     "node-walrus": "^0.0.12",
     "pretty-print-json": "^3.0.3",
